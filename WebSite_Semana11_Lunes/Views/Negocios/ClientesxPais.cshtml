@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebSite_Semana11_Lunes.ServicioNegocios.cliente>
+
+@{
+    ViewBag.Title = "ClientesxPais";
+}
+
+<h2>ClientesxPais</h2>
+
+@using (Html.BeginForm())
+{
+    <strong>Ingresar pais :</strong>
+    @Html.DropDownList("pais", (SelectList)ViewBag.pais)
+    <input type="submit" value="Consultar" />
+ }
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idcliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idpais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombrecia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idcliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idpais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombrecia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

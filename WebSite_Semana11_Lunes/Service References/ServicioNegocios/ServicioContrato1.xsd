@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ServiciosWCF" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServiciosWCF" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfcliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cliente" nillable="true" type="tns:cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcliente" nillable="true" type="tns:ArrayOfcliente" />
+  <xs:complexType name="cliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idcliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idpais" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombrecia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cliente" nillable="true" type="tns:cliente" />
+  <xs:complexType name="ArrayOfpais">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pais" nillable="true" type="tns:pais" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfpais" nillable="true" type="tns:ArrayOfpais" />
+  <xs:complexType name="pais">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idpais" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombrepais" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="pais" nillable="true" type="tns:pais" />
+</xs:schema>
