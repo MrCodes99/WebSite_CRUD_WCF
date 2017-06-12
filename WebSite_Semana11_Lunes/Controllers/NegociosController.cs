@@ -40,7 +40,8 @@ namespace WebSite_Semana11_Lunes.Controllers
 
             ViewBag.mensaje = servicio.Agregar(reg);
 
-            return RedirectToAction("Index");
+            //return RedirectToAction("Index");
+            return View(reg);
         }
 
         public ActionResult Details(string id)
